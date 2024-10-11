@@ -1,0 +1,27 @@
+curl --location 'http://localhost:8090/createUser' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: session=s%3AdX2hlsWaEio8ClEpflVSFWTDlyTk4tf5.4Yrhm7dD71o8lQBDGsh63n66ZNaiJtwhu3UbPuAiDes' \
+--data-raw '{
+    "name":"Erick",
+    "last_name_P":"Camarena",
+    "phone":"5518038044",
+    "email":"String@dsa.com",
+    "username":"ECamarena1",
+    "password":"pass123"
+}'
+
+curl --location 'http://localhost:8090/login' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: session=s%3AdX2hlsWaEio8ClEpflVSFWTDlyTk4tf5.4Yrhm7dD71o8lQBDGsh63n66ZNaiJtwhu3UbPuAiDes' \
+--data '{
+    "user":"ECamarena1",
+    "password":"pass123"
+}'
+
+curl --location 'http://localhost:8090/getUsers' \
+--header 'x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiRUNhbWFyZW5hMSIsInBhc3N3b3JkIjoicGFzczEyMyIsImlhdCI6MTcyODYzMzg2OSwiZXhwIjoxNzI4NjM3NDY5fQ.3TEDIK420uaWu2KbqYcEQWxL9TyHrr1R51RmHZdn2Zs' \
+--header 'Cookie: session=s%3A_xO47AxFNlgW1jUspSSme_vA_Z_y8WV8.qcLDyjFImVTho53mnkgJ8sSHztUBhMKvEMcoUAdL43c'
+
+curl --location --request POST 'http://localhost:8090/logout' \
+--header 'x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiRUNhbWFyZW5hMSIsInBhc3N3b3JkIjoicGFzczEyMyIsImlhdCI6MTcyODYzMzg2OSwiZXhwIjoxNzI4NjM3NDY5fQ.3TEDIK420uaWu2KbqYcEQWxL9TyHrr1R51RmHZdn2Zs' \
+--header 'Cookie: session=s%3AdX2hlsWaEio8ClEpflVSFWTDlyTk4tf5.4Yrhm7dD71o8lQBDGsh63n66ZNaiJtwhu3UbPuAiDes'
